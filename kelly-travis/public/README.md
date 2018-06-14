@@ -10,13 +10,10 @@
 <!-- What are the steps that a user must take in order to build this app on their own machine and get it running? -->
 
 ## Architecture
-<!-- Provide a detailed description of the application design. What technologies (languages, libraries, etc) you're using, and any other relevant design information. -->
+html, css, javascript, handlebars, jquery, marked.
+## Change Log:
 
-## Change Log
-<!-- Use this are to document the iterative changes made to your application as each feature is successfully implemented. Use time stamps. Here's an examples:
-
-01-01-2001 4:59pm - Application now has a fully-functional express server, with GET and POST routes for the book resource.
-
+06-14-2018 12:59pm - Setup commits and TODO's
 ## Credits and Collaborations
-<!-- Give credit (and a link) to other people or resources that helped you build this application. -->
--->
+
+https://github.com/cornerkick87/08-sql-intro-and-postgres/blob/master/08-CRUD-testing.md
