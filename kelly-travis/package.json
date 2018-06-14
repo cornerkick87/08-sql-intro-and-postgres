@@ -1,0 +1,34 @@
+{
+  "name": "mvc-blog",
+  "version": "1.0.0",
+  "description": "As we now complete our MVC conversation, we can refactor our app to use good MVC separation of concerns.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "Code Fellows",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.3",
+    "fs": "0.0.1-security",
+    "pg": "^7.4.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/cornerkick87/08-sql-intro-and-postgres.git"
+  },
+  "keywords": [
+    "server",
+    "blog",
+    "access",
+    "postgres"
+  ],
+  "bugs": {
+    "url": "https://github.com/cornerkick87/08-sql-intro-and-postgres/issues"
+  },
+  "homepage": "https://github.com/cornerkick87/08-sql-intro-and-postgres#readme",
+  "Dependencies": {
+    "express": "^4.16.3"
+  }
+}
