@@ -19,9 +19,7 @@ const app = express();
 const conString = 'postgres://localhost:5432/kilovolt';
 
 // Done TODO: Pass the conString into the Client constructor so that the new database interface instance has the information it needs
-const client = new pg.Client();
-console.log(client);
-
+const client = new pg.Client(conString);
 // REVIEW: Use the client object to connect to our DB.
 client.connect();
 
@@ -41,8 +39,10 @@ app.get('/new-article', (request, response) => {
 });
 
 
-// REVIEW: Routes for making API calls to use CRUD Operations on our database
+// REVIEW: Routes for making API calls to use CRUD Operations on our database// *interface to the database!
 app.get('/articles', (request, response) => {
+
+
   //DONE COMMENT: What number(s) of the full-stack-diagram.png image correspond to this route? Be sure to take into account how the request was initiated, how it was handled, and how the response was delivered. Which method of article.js is interacting with this particular piece of `server.js`? What part of CRUD is being enacted/managed by this particular piece of code?
 
   //RESPONSE: The numbers that apply to this are #1 #2 #3 #4 #5.  The user navigates to the aricles page #1, which automatically send a request to the server #2, the server queries the database #3,  which returns the results of the queries #4 and then the server returns the results to the browser #5. C.R.U.D steps being used her are Reads from database.   Presumably the client side result is an update of new.html but does not happen here.
@@ -82,13 +82,23 @@ app.post('/articles', (request, response) => {
 });
 
 app.put('/articles/:id', (request, response) => {
+  //SELECT
   // DONE COMMENT: What number(s) of the full-stack-diagram.png image correspond to this route? Be sure to take into account how the request was initiated, how it was handled, and how the response was delivered. Which method of article.js is interacting with this particular piece of `server.js`? What part of CRUD is being enacted/managed by this particular piece of code?
 
   //RESPONSE: The user submits an updated article #1, browser send a request to the server #2, who passses the request to the database which overwrites the old article with the updated article #3.  C.R.U.D model steps being used are Reading, Creating, Updating and Deleting 
 
+  //EXPAMLE ANSWERE
+
+  // Solution:
+  // number:3(query)
+  // method: articles.updateRecord
+  // CRUD:(create)
+
+  //sql example
   let SQL = `
-    UPDATE articles(title, author, "authorUrl", category, "publishedOn", body)
-    VALUES ($1, $2, $3, $4, $5, $6);
+  UPDATE id FROM articles
+  SET title=$1
+  WHERE articles_id=$7
   `;
 
   let values = [
